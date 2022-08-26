@@ -1,4 +1,0 @@
-chrome.exe
-msedge.exe
-Spotify.exe
-Teams.exe
