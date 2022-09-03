@@ -1,1 +1,0 @@
-start C:\Users\tlabrie\AppData\Local\Programs\Python\Python310\python.exe C:\Users\tlabrie\AppData\Local\Programs\Python\Python310\Scripts\pyinstaller.exe --onefile --noconsole --noconfirm --hidden-import=tkinter %1 
