@@ -70,9 +70,9 @@ def update(url, ver, pid, old_ver):
     exename = "AudioMixer_v" + ver + ".exe"
     old_path = os.path.join(old_dir, exename)
     new_path = os.path.join(dir, exename)
-    pyinstaller_path = file_finder("C:\\Users\\", "pyinstaller.exe")
-    scripts_path = C:\Users\tlabrie\AppData\Local\Programs\Python\Python310\Scripts
-    python_folder = C:\Users\tlabrie\AppData\Local\Programs\Python\Python310
+    pyinstaller_path = file_finder("C:\\Users", "pyinstaller.exe")
+    scripts_path = "C:\Users\tlabrie\AppData\Local\Programs\Python\Python310\Scripts"
+    python_folder = "C:\Users\tlabrie\AppData\Local\Programs\Python\Python310"
     python_path = os.path.join(python_folder, "python.exe")
     install = os.path.join(path, "install.bat " + scripts_path + " " + python_path + " " + pyinstaller_path + " " + filename)
     os.system(install)
