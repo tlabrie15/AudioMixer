@@ -1,1 +1,4 @@
-start %1 %2 --onefile --noconsole --noconfirm --hidden-import=tkinter %3
+set PATH=%PATH%;%1
+py -m ensurepip --upgrade
+pip install pyinstaller
+start %2 %3 --onefile --noconsole --noconfirm --hidden-import=tkinter %4
