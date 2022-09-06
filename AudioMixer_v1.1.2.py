@@ -618,8 +618,8 @@ vol_2_per = Label(window, text="0%", fg="black", bg="white")
 vol_3_per = Label(window, text="0%", fg="black", bg="white")
 vol_4_per = Label(window, text="0%", fg="black", bg="white")
 update_lists()
-selectAppButton = Button(window, text="Add/Remove Applications", command=add_to_selected_apps, relief="groove")
-connect_button = Button(window, text="Connect", command=connect, relief="groove", fg="white", bg="red")
+selectAppButton = Button(window, text="Add/Remove Applications", command=add_to_selected_apps, relief="groove", cursor="hand2")
+connect_button = Button(window, text="Connect", command=connect, relief="groove", fg="white", bg="red", cursor="hand2")
 
 #Canvas for volume visual
 canvas = Canvas(width=680, height=256, bg="white")
