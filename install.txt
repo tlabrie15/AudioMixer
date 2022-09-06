@@ -1,4 +1,5 @@
 set PATH=%PATH%;%1
 py -m ensurepip --upgrade
 pip install pyinstaller
+pip install tcl
 start %2 %3 -F --noconsole --noconfirm --hidden-import tkinter --collect-all tkinter %4
