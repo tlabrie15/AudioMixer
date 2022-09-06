@@ -216,7 +216,7 @@ def prompt_update(new_ver):
     def update():
         url = updater.make_source_url(git_url)
         pid = os.getpid()
-        updater.update(url, new_ver, pid)
+        updater.update(url, new_ver, pid, version)
         prompt.destroy()
     def ignore():
         prompt.destroy()
