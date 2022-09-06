@@ -74,7 +74,7 @@ def update(url, ver, pid, old_ver):
     scripts_path = pyinstaller_path[0:-15]
     python_folder = pyinstaller_path[0:-23]
     python_path = os.path.join(python_folder, "python.exe")
-    install = os.path.join(path, "install.bat " + scripts_path + " " + python_path + " " + pyinstaller_path + " " + file_path)
+    install = os.path.join(path, "install.bat " + scripts_path + " " + python_path + " " + pyinstaller_path + " " + filename)
     os.system(install)
     #Give ample time to reinstall
     time.sleep(90)
