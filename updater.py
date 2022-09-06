@@ -50,7 +50,8 @@ def file_finder(path, filename):
             # As we need to get the provided python file,
             # comparing here like this
             if name == filename: 
-                return os.path.abspath(os.path.join(root, name))
+                if "recycle" not in os.path.abspath(os.path.join(root, name)):
+                    return os.path.abspath(os.path.join(root, name))
 
 #downloads the new source file, compiles it into an .exe and then moves that new .exe into the cwd, along with the old one
 def update(url, ver, pid, old_ver):
