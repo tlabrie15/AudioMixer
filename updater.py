@@ -44,6 +44,14 @@ def make_source_url(repo_url):
     url += latest + ".py"
     return url
 
+def file_finder(path, filename):
+    for root, dirs, files in os.walk(path):
+        for name in files:
+            # As we need to get the provided python file,
+            # comparing here like this
+            if name == filename: 
+                return os.path.abspath(os.path.join(root, name))
+
 #downloads the new source file, compiles it into an .exe and then moves that new .exe into the cwd, along with the old one
 def update(url, ver, pid, old_ver):
     #Set the path for the new updated source code
@@ -62,10 +70,14 @@ def update(url, ver, pid, old_ver):
     exename = "AudioMixer_v" + ver + ".exe"
     old_path = os.path.join(old_dir, exename)
     new_path = os.path.join(dir, exename)
-    install = "install.bat " + path
+    pyinstaller_path = file_finder("C:\\Users\\", "pyinstaller.exe")
+    scripts_path = pyinstaller_path[0:-15]
+    python_folder = pyinstaller_path[0:-23]
+    python_path = os.path.join(python_folder, "python.exe")
+    install = os.path.join(path, "install.bat " + scripts_path + " " + python_path + " " + pyinstaller_path + " " + file_path)
     os.system(install)
     #Give ample time to reinstall
-    time.sleep(60)
+    time.sleep(90)
     #UNCOMMENT REST OF LINE ON RELEASE
     restart = "restart.bat " + old_path + " " + dir + " " + new_path + " " + str(pid)# + " " + old_py + " " + old_spec
     os.system(restart)
